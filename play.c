@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "stack/stack_arr.h"
+#include "utils/abc.h"
 
 int main()
 {
@@ -16,6 +17,7 @@ int main()
   pop(s);
   printf("AFTER DELETING\n");
   print_stack(s);
+  delete_stack(s);
 
   return 0;
 }

@@ -9,3 +9,4 @@ Stack *get_new_stack(int);
 void push(int, Stack *);
 void pop(Stack *);
 void print_stack(Stack *);
+void delete_stack(Stack *);

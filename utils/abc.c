@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
+#include "abc.h"
 
 int digit_count(int num)
 {
@@ -17,7 +19,7 @@ int max(int arr[], int size)
 {
   if (size == 0)
   {
-    printf("Error: Empty array");
+    throw("Error: Cannot determine max from empty array\n");
     return INT16_MIN;
   }
 
@@ -40,4 +42,10 @@ void draw_border(int dash_count)
     printf("-");
   }
   printf("+\n");
+}
+
+void throw(const char *error_msg)
+{
+  fprintf(stderr, "%s", error_msg);
+  exit(EXIT_FAILURE);
 }

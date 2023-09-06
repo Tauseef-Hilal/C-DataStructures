@@ -31,8 +31,7 @@ void push(int value, Stack *stack)
 {
   if (stack->length == stack->capacity)
   {
-    printf("Stack already full\n");
-    return;
+    throw("StackError: Push into filled stack\n");
   }
 
   stack->arr[stack->length] = value;
@@ -43,10 +42,19 @@ void pop(Stack *stack)
 {
   if (stack->length == 0)
   {
-    printf("Stack already empty\n");
-    return;
+    throw("StackError: Pop from empty stack\n");
   }
 
   stack->length--;
+}
+
+void delete_stack(Stack *stack)
+{
+  if (stack == NULL)
+  {
+    throw("ValueError: Expected a Stack * but got NULL\n");
+  }
+
+  free(stack);
 }
 
