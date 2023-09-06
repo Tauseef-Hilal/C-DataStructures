@@ -31,7 +31,7 @@ void push(int value, Stack *stack)
 {
   if (stack->length == stack->capacity)
   {
-    throw("StackError: Push into filled stack\n");
+    throw("StackError: Cannot push onto a filled stack\n");
   }
 
   stack->arr[stack->length] = value;
@@ -52,7 +52,7 @@ void delete_stack(Stack *stack)
 {
   if (stack == NULL)
   {
-    throw("ValueError: Expected a Stack * but got NULL\n");
+    throw("ValueError: Expected a (Stack *) but got NULL\n");
   }
 
   free(stack);

@@ -20,7 +20,6 @@ int max(int arr[], int size)
   if (size == 0)
   {
     throw("Error: Cannot determine max from empty array\n");
-    return INT16_MIN;
   }
 
   int current_max = arr[0];
