@@ -1,55 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 
-typedef struct stack
-{
-  int length;
-  int capacity;
-  int arr[];
-} Stack;
-
-int digit_count(int num)
-{
-  int count = 0;
-  while (num != 0)
-  {
-    count++;
-    num /= 10;
-  }
-
-  return count;
-}
-
-int max(int arr[], int size)
-{
-  if (size == 0)
-  {
-    printf("Error: Empty array");
-    return INT16_MIN;
-  }
-
-  int current_max = arr[0];
-  for (int i = 1; i < size; i++)
-  {
-    if (arr[i] > current_max)
-    {
-      current_max = arr[i];
-    }
-  }
-
-  return current_max;
-}
-
-void draw_border(int dash_count)
-{
-  printf("+");
-  for (int i = 0; i < dash_count; i++)
-  {
-    printf("-");
-  }
-  printf("+\n");
-}
+#include "./stack_arr.h"
+#include "../utils/abc.h"
 
 Stack *get_new_stack(int capacity)
 {
@@ -97,21 +50,3 @@ void pop(Stack *stack)
   stack->length--;
 }
 
-int main()
-{
-  Stack *s = get_new_stack(10);
-  for (int i = 0; i < 10; i++)
-  {
-    push(i + 1, s);
-  }
-
-  printf("BEFORE DELETING\n");
-  print_stack(s);
-
-  pop(s);
-  pop(s);
-  printf("AFTER DELETING\n");
-  print_stack(s);
-
-  return 0;
-}
