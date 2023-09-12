@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "./stack_arr.h"
-#include "../utils/abc.h"
+#include "../../include/stack_arr.h"
+#include "../../include/abc.h"
 
 Stack *get_new_stack(int capacity)
 {
